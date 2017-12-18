@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global prefix name
+        puts stderr "\n\t load $name located at $prefix\n"
+}
+
+
+# for Tcl script use only
+set name		numpy-1.13.3-cp27-cp27m-manylinux1_x86_64
+set	prefix		/home/aban/soft/pylibs
+
+#prereq	python/2.7.14
+
+module-whatis	" set $prefix/$name"
+
+prepend-path    PYTHONPATH		$prefix/$name
+

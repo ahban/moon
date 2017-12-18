@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global prefix name
+
+        puts stderr "\n\t load $name located at $prefix\n"
+}
+
+
+# for Tcl script use only
+set name		setuptools-38.2.4-py2.py3-none-any
+set	prefix		/home/aban/soft/pylibs
+
+
+module-whatis	" set $prefix/$name"
+
+prepend-path    PYTHONPATH		$prefix/$name
+

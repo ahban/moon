@@ -1,0 +1,26 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global version prefix
+
+        puts stderr "\n\t load cuda $version located at $prefix\n"
+}
+
+
+# for Tcl script use only
+set	version		8.0.61
+set	prefix		/home/aban/soft/cuda
+
+module-whatis	" set cuda $version"
+
+setenv			CUDA_HOME			$prefix/$version
+setenv          MODULESHOME			$prefix
+prepend-path    PATH   				$prefix/$version/bin
+prepend-path    PATH   				$prefix/$version/libnsight
+prepend-path    PATH   				$prefix/$version/libnvvp
+prepend-path    MANPATH				$prefix/$version/doc/man
+prepend-path    LD_LIBRARY_PATH		$prefix/$version/lib64
+prepend-path    PKG_CONFIG_PATH		$prefix/$version/pkgconfig
+

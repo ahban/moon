@@ -1,0 +1,35 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global prefix name
+
+        puts stderr "\n\t load $name located at $prefix\n"
+}
+
+
+# for Tcl script use only
+set name		tensorflow_gpu-1.4.1-cp35-cp35m-manylinux1_x86_64
+set	prefix		/home/aban/soft/pylibs
+
+module-whatis	" set $prefix/$name"
+
+prepend-path    PYTHONPATH		$prefix/$name
+
+
+module load python/3.5.4
+module load pylibs/bleach/1.5.0
+module load pylibs/Markdown/2.6.10
+module load pylibs/setuptools/38.2.4
+module load pylibs/3/tensorflow_tensorboard/0.4.0rc3
+module load pylibs/3/enum34/1.1.6
+module load pylibs/3/5/numpy/1.13.3
+module load pylibs/six/1.11.0
+module load pylibs/Werkzeug/0.13
+module load pylibs/html5lib/0.9999999
+module load pylibs/3/5/protobuf/3.5.0.post1
+module load pylibs/wheel/0.30.0
+
+module load cudnn/6.0.21
+module load cuda/8.0.61

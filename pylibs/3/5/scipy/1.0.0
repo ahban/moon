@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global prefix name
+
+        puts stderr "\n\t load $name located at $prefix\n"
+}
+
+
+# for Tcl script use only
+set name		scipy-1.0.0-cp35-cp35m-manylinux1_x86_64
+set	prefix		/home/aban/soft/pylibs
+
+
+module-whatis	" set $prefix/$name"
+
+prepend-path    PYTHONPATH		$prefix/$name
+

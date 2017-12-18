@@ -1,0 +1,21 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global prefix name
+
+        puts stderr "\n\t load $name located at $prefix\n"
+}
+
+
+# for Tcl script use only
+set name		bleach-1.5.0-py2.py3-none-any
+set	prefix		/home/aban/soft/pylibs
+
+
+module-whatis	" set $prefix/$name"
+
+setenv          MODULESHOME		$prefix
+prepend-path    PYTHONPATH		$prefix/$name
+

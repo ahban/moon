@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global version prefix name
+
+        puts stderr "\n\t load $name $version located at $prefix\n"
+}
+
+
+# for Tcl script use only
+set name		python
+set	version		3.6.3
+set	prefix		/home/aban/soft/python
+
+module-whatis	" set $name $version"
+
+setenv          MODULESHOME			$prefix
+prepend-path    PATH   				$prefix/$version/bin
+prepend-path    MANPATH				$prefix/$version/share/man
+prepend-path    LD_LIBRARY_PATH		$prefix/$version/lib
+prepend-path    PKG_CONFIG_PATH		$prefix/$version/lib/pkgconfig
+

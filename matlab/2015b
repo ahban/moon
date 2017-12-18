@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+        global version prefix
+
+        puts stderr "\n\t load MATLAB $version at $prefix\n"
+}
+
+
+# for Tcl script use only
+set	version		R2015b
+set	prefix		/home/aban/soft/MATLAB
+
+module-whatis	"set MATLAB $version"
+
+prereq			cuda/7.0.28
+
+setenv          MODULESHOME			$prefix
+prepend-path    PATH   				$prefix/$version/bin
+#prepend-path    LD_LIBRARY_PATH		$prefix/$version/lib64
+#prepend-path    PKG_CONFIG_PATH		$prefix/$version/pkgconfig
+
