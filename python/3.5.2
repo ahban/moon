@@ -16,7 +16,9 @@ set	prefix		/home/aban/soft/python
 
 module-whatis	" set $name $version"
 
-setenv          MODULESHOME			$prefix
+module load pylibs/pip/9.0.1
+module load pylibs/setuptools/38.2.4
+
 prepend-path    PATH   				$prefix/$version/bin
 prepend-path    MANPATH				$prefix/$version/share/man
 prepend-path    LD_LIBRARY_PATH		$prefix/$version/lib

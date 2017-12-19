@@ -16,5 +16,6 @@ set	prefix		/home/aban/soft/pylibs
 
 module-whatis	" set $prefix/$name"
 
+module load pylibs/3/5/numpy/1.13.3
 prepend-path    PYTHONPATH		$prefix/$name
 
